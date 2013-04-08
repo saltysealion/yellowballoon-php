@@ -17,36 +17,36 @@ class UserTest extends CakeTestCase {
 		'app.message'
 	);
 
-/**
- * setUp method
- *
- * @return void
- */
-	public function setUp() {
-		parent::setUp();
-		$this->User = ClassRegistry::init('User');
-	}
+  /**
+   * setUp method
+   *
+   * @return void
+   */
+    public function setUp() {
+      parent::setUp();
+      $this->User = ClassRegistry::init('User');
+    }
 
-/**
- * teardown method
- *
- * @return void
- */
-	public function tearDown() {
-		unset($this->User);
+  /**
+   * teardown method
+   *
+   * @return void
+   */
+    public function tearDown() {
+      unset($this->User);
 
-		parent::tearDown();
-	}
+      parent::tearDown();
+    }
 
-/**
- * teardown method
- *
- * @return void
- */
     public function testInvalidEmail() {
         $this->User->create(array('email' => 'notvalid'));
 
         $this->assertEquals($this->User->validates(), false);
     }
 
+    public function testValidEmail() {
+        $this->User->create(array('email' => 'hello@yellowballoon.com'));
+
+        $this->assertEquals($this->User->validates(), true);
+    }
 }
