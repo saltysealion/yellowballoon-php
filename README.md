@@ -1,7 +1,7 @@
 Yellow Balloon - Grattitude journal
 ===================================
 
-[Built using:]
+[Built using]
 
 CakePHP
 -------
